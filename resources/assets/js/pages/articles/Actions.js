@@ -16,11 +16,11 @@ class Actions extends Component {
 
         return (
             <div className="btn-group">
-                <a href="#" onClick={e => Actions.edit(article.id) } className="btn btn-primary btn-sm">
-                    <i className="glyphicon glyphicon-pencil" /> Edit
+                <a href="#{{article.id}}" onClick={e => Actions.edit(article.id) } className="btn btn-primary btn-sm">
+                    Edit
                 </a>
-                <a href="#" onClick={e => doRemove(e, article.id) } className="btn btn-danger btn-sm">
-                    <i className="glyphicon glyphicon-trash" /> Trash
+                <a href="#{{article.id}}" onClick={e => doRemove(e, article.id) } className="btn btn-danger btn-sm">
+                    Trash
                 </a>
             </div>
         );

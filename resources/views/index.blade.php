@@ -12,7 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}?v={{ rand(1000, 50000000) }}" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body{
+            margin-bottom: 60px;
+        }
+    </style>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -26,6 +31,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{url('')}}/js/app.js?v={{ rand(1000, 50000000) }}"></script>
+<script src="{{url('')}}/js/bundle.js?v={{ rand(1000, 50000000) }}"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import { Redirect } from 'react-router-dom'
 import { register } from '../../service'
-import { Validator } from 'ree-validate'
+import ReeValidate from 'ree-validate'
 
 // import components
 import Form from './components/Form'
@@ -21,7 +21,7 @@ class Page extends Component {
   constructor(props) {
     super(props)
     
-    this.validator = new Validator({
+    this.validator = new ReeValidate({
       name: 'required|min:6',
       email: 'required|email',
       password: 'required|min:6',
@@ -35,7 +35,8 @@ class Page extends Component {
         password: '',
         passwordConfirmation: '',
       },
-      errors: this.validator.errors
+      errors: this.validator.errors,
+      fields: this.validator.fields
     }
     
     this.handleChange = this.handleChange.bind(this)
@@ -53,7 +54,7 @@ class Page extends Component {
   // event to handle input change
   handleChange(name, value) {
     const { errors } = this.validator
-    
+
     this.setState({credentials: { ...this.state.credentials, [name]: value }})
     errors.remove(name)
     
@@ -120,7 +121,7 @@ class Page extends Component {
               <span className="anchor"/>
               <div className="card has-shadow">
                 <div className="card-body">
-                  <Form {...props} />
+                  <Form {...props}  />
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class UsersTableSeeder extends Seeder
 {
@@ -19,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'm.basra@live.com',
             'password' => bcrypt('secret'),
             'is_admin' => true,
-            'remember_token' => Str::random(10),
+            'remember_token' => str_random(10),
         ]);
     }
 }
